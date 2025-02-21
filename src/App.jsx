@@ -9,6 +9,7 @@ const App = () => {
 	return (
 		<>
 			<p>Welcome to Forever!</p>
+			<p>Join us!</p>
 		</>
 	);
 };

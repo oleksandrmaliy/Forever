@@ -8,7 +8,9 @@ const App = () => {
 
 	return (
 		<>
-			<p>Welcome to Forever!</p>
+			<p className='p-4 text-2xl font-bold text-amber-900 m-10'>
+				Welcome to Forever!
+			</p>
 		</>
 	);
 };

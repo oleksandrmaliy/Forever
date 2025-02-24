@@ -1,53 +1,61 @@
-import { useEffect, useState } from "react";
+import Container from "./components/container";
+import Header from "./components/header";
+import ForeverBlock from "./components/foreverBlock.jsx";
+import ShopBlock from "./components/shopBlock.jsx";
+import ShopLink from "./components/shopLink.jsx";
+import Footer from "./components/footer.jsx";
 
 import "./App.css";
 
 const App = () => {
-  // const remInPx = parseFloat(
-  //   getComputedStyle(document.documentElement).fontSize
-  // );
-  // console.log(`1rem = ${remInPx}px`);
-  const [position, setPosition] = useState("translate-x-[90vw]");
-
-  useEffect(() => {
-    setTimeout(() => {
-      setPosition("translate-x-0");
-    }, 1000);
-  }, []);
-
   return (
-    <div className="relative flex h-96 w-full items-center justify-center overflow-hidden bg-amber-900 p-10">
-      <div
-        className={`absolute h-48 w-48 place-content-center bg-cyan-300 text-center align-middle transition-transform duration-1000 ease-out ${position}`}
-      >
-        lalala
-      </div>
-    </div>
+    <>
+      <Header>
+        <Container>
+          <p>Header</p>
+          <p>Hello, world!</p>
+        </Container>
+      </Header>
+      <Container>
+        <ForeverBlock>
+          <p>Forever Block</p>
+          {/* <div className="h-12 w-12 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
+          <div className="h-10 w-10 animate-ping rounded-full bg-blue-500"></div>
+          <div className="flex h-16 w-16 animate-bounce items-center justify-center bg-red-500 text-white">
+            🔔
+          </div>
+          <div className="h-10 w-32 animate-pulse rounded bg-gray-300"></div> */}
+        </ForeverBlock>
+        <ShopBlock>
+          <p>Shop Block</p>
+        </ShopBlock>
+        <ShopLink>
+          <p>Link 1 Block</p>
+        </ShopLink>
+        <ShopLink>
+          <p>Link 2 Block</p>
+        </ShopLink>
+        <ShopLink>
+          <p>Link 3 Block</p>
+        </ShopLink>
+        <ShopLink>
+          <p>Link 4 Block</p>
+        </ShopLink>
+        <ShopLink>
+          <p>Link 5 Block</p>
+        </ShopLink>
+        <ShopLink>
+          <p>Link 6 Block</p>
+        </ShopLink>
+      </Container>
+      <Footer>
+        <Container>
+          <p>Footer</p>
+          <p>Hello, world!</p>
+        </Container>
+      </Footer>
+    </>
   );
 };
 
 export default App;
-
-// import "./App.css";
-
-// const App = () => {
-//   const [position, setPosition] = useState("left-0");
-
-//   useEffect(() => {
-//     setTimeout(() => {
-//       setPosition("right-0 translate-x-full");
-//     }, 1000);
-//   }, []);
-
-//   return (
-//     <div className="relative mx-auto h-96 w-96 bg-amber-900 p-10">
-//       <div
-//         className={`absolute mx-auto h-48 w-48 place-content-center bg-cyan-300 text-center align-middle transition-all duration-500 ${position}`}
-//       >
-//         lalala
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default App;

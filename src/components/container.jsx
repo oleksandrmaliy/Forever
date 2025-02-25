@@ -1,7 +1,7 @@
 // import { Children } from "react";
 
 const Container = ({ children }) => {
-  return <div className="mx-auto w-[1280px]">{children}</div>;
+  return <div className="container bg-red-300">{children}</div>;
 };
 
 export default Container;

@@ -1,26 +1,26 @@
-// import { useEffect, useState } from "react";
-// const remInPx = parseFloat(
-//   getComputedStyle(document.documentElement).fontSize
-// );
-// console.log(`1rem = ${remInPx}px`);
-// const [position, setPosition] = useState("translate-x-[90vw]");
-
-// useEffect(() => {
-//   setTimeout(() => {
-//     setPosition("translate-x-0");
-//   }, 1000);
-// }, []);
-
-// <div className="relative flex h-96 w-full items-center justify-center overflow-hidden bg-amber-900 p-10">
-//   <div
-//     className={`absolute h-48 w-48 place-content-center bg-cyan-300 text-center align-middle transition-transform duration-1000 ease-out ${position}`}
-//   >
-//     lalala
-//   </div>
-// </div>
-
 const Header = ({ children }) => {
-  return <div className="mb-4 h-20 w-full bg-green-500 p-4">{children}</div>;
+  return (
+    <div className="p-1 text-center sm:p-2 md:p-3 lg:p-4 xl:p-5">
+      <h1 className="inline-block whitespace-nowrap pt-5 font-vibes text-5xl sm:pt-5 sm:text-6xl md:pt-6 md:text-7xl lg:pt-7 lg:text-8xl xl:pt-8 xl:text-9xl">
+        Наталя М
+      </h1>
+      <h3 className="font-poiret text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl">
+        Підприємець Форевер
+      </h3>
+      {/* <p className="inline-block rotate-[-10]">Цей текст нахилений під кутом</p>
+      <p className="inline-block skew-x-[-10]">Цей текст перекошений</p>
+      <p className="inline-block transition-transform group-hover:rotate-6">
+        Наведи курсор – і текст повернеться
+      </p> */}
+      {/* <p className="inline-block" style={{ transform: "rotate(-30deg)" }}>
+        Цей текст нахилений під кутом
+      </p>
+      <p className="inline-block" style={{ transform: "skewX(-10deg)" }}>
+        Цей текст перекошений
+      </p> */}
+      {children}
+    </div>
+  );
 };
 
 export default Header;

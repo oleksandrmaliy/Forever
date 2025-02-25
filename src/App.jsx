@@ -1,21 +1,20 @@
 import Container from "./components/container";
-import Header from "./components/header";
+import Top from "./components/top.jsx";
+import Header from "./components/header.jsx";
 import ForeverBlock from "./components/foreverBlock.jsx";
 import ShopBlock from "./components/shopBlock.jsx";
 import ShopLink from "./components/shopLink.jsx";
+import Bottom from "./components/bottom.jsx";
 import Footer from "./components/footer.jsx";
-
-import "./App.css";
 
 const App = () => {
   return (
     <>
-      <Header>
+      <Top>
         <Container>
-          <p>Header</p>
-          <p>Hello, world!</p>
+          <Header></Header>
         </Container>
-      </Header>
+      </Top>
       <Container>
         <ForeverBlock>
           <p>Forever Block</p>
@@ -48,12 +47,14 @@ const App = () => {
           <p>Link 6 Block</p>
         </ShopLink>
       </Container>
-      <Footer>
+      <Bottom>
         <Container>
-          <p>Footer</p>
-          <p>Hello, world!</p>
+          <Footer>
+            <p>Footer</p>
+            <p>Hello, world!</p>
+          </Footer>
         </Container>
-      </Footer>
+      </Bottom>
     </>
   );
 };

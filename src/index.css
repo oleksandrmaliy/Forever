@@ -1,9 +1,9 @@
 @import "tailwindcss";
-/* @config "../tailwind.config.js"; */
+@config "../tailwind.config.js";
 
-@import "tailwindcss/base";
+/* @import "tailwindcss/base";
 @import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss/utilities"; */
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

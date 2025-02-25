@@ -1,8 +1,27 @@
 const ForeverBlock = ({ children }) => {
   return (
-    <div className="mb-4 min-h-96 bg-purple-500 p-4">
+    <div className="font-montserrat mb-4 min-h-96 bg-purple-200 p-4">
       {children}
-      <p>Hello World</p>
+      <p className="font-montserrat indent-30 text-zinc-800">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+        dolorem sunt cumque quaerat, minus a delectus accusantium nisi aliquam
+        ut adipisci soluta libero laboriosam nihil. Incidunt corrupti facilis
+        nostrum aliquid? Itaque harum accusamus voluptatibus temporibus
+        dignissimos doloremque distinctio sed reiciendis, ea dolore
+        necessitatibus totam veritatis enim dicta cum. Quibusdam vero, nobis
+        dolore magni accusamus animi! Sapiente nulla dolorum ut magnam.
+        Similique iure ex consequatur non rerum quos voluptatum eveniet
+        obcaecati provident, aspernatur harum id repellendus sunt assumenda
+        repellat pariatur omnis quis quasi aliquid ut! Nisi porro architecto
+        voluptatibus nihil velit. Sit, magni mollitia. Illo beatae minima
+        explicabo veritatis dolore ad quisquam, maiores laboriosam animi
+        assumenda, voluptate ratione. Veritatis officia possimus qui at
+        obcaecati ut, dicta numquam molestiae voluptatum quisquam
+        exercitationem. Dolor corrupti provident nemo molestias culpa aspernatur
+        amet. Suscipit similique dolore officiis aliquam! Dolore non delectus
+        obcaecati accusamus, saepe quos similique reprehenderit iure?
+        Dignissimos, voluptate aspernatur eius nisi sunt minima.
+      </p>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 const ForeverBlock = ({ children }) => {
   return (
-    <div className="font-montserrat mb-4 min-h-96 bg-purple-200 p-4">
+    <div className="bg-redcolor mb-8 min-h-96 p-4 font-montserrat">
       {children}
-      <p className="font-montserrat indent-30 text-zinc-800">
+      <p className="indent-30 font-montserrat text-zinc-800">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
         dolorem sunt cumque quaerat, minus a delectus accusantium nisi aliquam
         ut adipisci soluta libero laboriosam nihil. Incidunt corrupti facilis

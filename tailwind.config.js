@@ -12,17 +12,17 @@ export default {
         30: "30px",
       },
       colors: {
-        primaryColor: "#166534",
-        bgColor: "#fef08a",
-        secondaryColor: "#15803d",
-        activeColor: "#ef4444",
+        redcolor: "#D2865A",
+        greencolor: "45A284",
+        bluecolor: "#81BEC5",
+        browncolor: "#D5DCDE",
+        yellowcolor: "#fef08a",
+        backcolor: "#D5DCDE",
       },
       boxShadow: {
         "custom-green": "5px 5px 10px #22c55e",
-        allYellow:
-          "4px 4px 6px #fef08a, -4px 4px 6px #fef08a, 4px -4px 6px #fef08a, -4px -4px 6px #fef08a",
-        allGreen:
-          "4px 4px 6px #166534, -4px 4px 6px #166534, 4px -4px 6px #166534, -4px -4px 6px #166534",
+        "all-yellow": "0 0 10px 5px #fef08a",
+        "all-green": "0 0 48px 12px #14532d",
       },
       container: {
         center: "true", // Центрує контейнер

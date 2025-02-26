@@ -20,7 +20,7 @@
 // </div>
 
 const Top = ({ children }) => {
-  return <div className="mb-4 w-full bg-green-900">{children}</div>;
+  return <div className="mb-8 w-full bg-green-900">{children}</div>;
 };
 
 export default Top;

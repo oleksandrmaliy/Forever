@@ -7,7 +7,7 @@ const Header = ({ children }) => {
       <h3 className="font-poiret text-lg text-yellow-200 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl">
         Підприємець Форевер
       </h3>
-      <p>ffc600 abt yellow forever - yellow-400, 3a9860 green forever, </p>
+
       {/* <p className="inline-block rotate-[-10]">Цей текст нахилений під кутом</p>
       <p className="inline-block skew-x-[-10]">Цей текст перекошений</p>
       <p className="inline-block transition-transform group-hover:rotate-6">

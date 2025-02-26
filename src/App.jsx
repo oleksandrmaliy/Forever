@@ -1,11 +1,12 @@
 import Container from "./components/container";
 import Top from "./components/top.jsx";
 import Header from "./components/header.jsx";
-import ForeverBlock from "./components/foreverBlock.jsx";
+import HeroBlock from "./components/heroBlock.jsx";
 import ShopBlock from "./components/shopBlock.jsx";
-import ShopLink from "./components/shopLink.jsx";
-import Bottom from "./components/bottom.jsx";
+import List from "./components/list.jsx";
+import ForeverBlock from "./components/foreverBlock.jsx";
 import Footer from "./components/footer.jsx";
+import Bottom from "./components/bottom.jsx";
 
 const App = () => {
   return (
@@ -16,6 +17,11 @@ const App = () => {
         </Container>
       </Top>
       <Container>
+        <HeroBlock></HeroBlock>
+        <ShopBlock>
+          <p>Shop Block</p>
+        </ShopBlock>
+        <List />
         <ForeverBlock>
           <p>Forever Block</p>
           {/* <div className="h-12 w-12 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
@@ -25,27 +31,6 @@ const App = () => {
           </div>
           <div className="h-10 w-32 animate-pulse rounded bg-gray-300"></div> */}
         </ForeverBlock>
-        <ShopBlock>
-          <p>Shop Block</p>
-        </ShopBlock>
-        <ShopLink>
-          <p>Link 1 Block</p>
-        </ShopLink>
-        <ShopLink>
-          <p>Link 2 Block</p>
-        </ShopLink>
-        <ShopLink>
-          <p>Link 3 Block</p>
-        </ShopLink>
-        <ShopLink>
-          <p>Link 4 Block</p>
-        </ShopLink>
-        <ShopLink>
-          <p>Link 5 Block</p>
-        </ShopLink>
-        <ShopLink>
-          <p>Link 6 Block</p>
-        </ShopLink>
       </Container>
       <Bottom>
         <Container>

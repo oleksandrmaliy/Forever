@@ -8,9 +8,6 @@ export default {
         poiret: ["Poiret One", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
       },
-      spacing: {
-        30: "30px",
-      },
       colors: {
         redcolor: "#D2865A",
         greencolor: "45A284",

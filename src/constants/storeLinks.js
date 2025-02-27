@@ -1,12 +1,12 @@
-import offer from "../assets/images/thumbs/offer.png";
-import liquid from "../assets/images/thumbs/liquid.png";
-import dietic from "../assets/images/thumbs/dietic.png";
-import bee from "../assets/images/thumbs/bee.png";
-import combi from "../assets/images/thumbs/combi.jpg";
-import hygine from "../assets/images/thumbs/hygine.jpg";
-import skin from "../assets/images/thumbs/skin.png";
+import offer from "../assets/images/storeThumbs/offer.png";
+import liquid from "../assets/images/storeThumbs/liquid.png";
+import dietic from "../assets/images/storeThumbs/dietic.png";
+import bee from "../assets/images/storeThumbs/bee.png";
+import combi from "../assets/images/storeThumbs/combi.jpg";
+import hygine from "../assets/images/storeThumbs/hygine.jpg";
+import skin from "../assets/images/storeThumbs/skin.png";
 
-export const linksArray = [
+export const storeLinks = [
   {
     title: "Пропозиції",
     url: "https://380500014529.flpuretail.com/uk/catalog/category/offers/",

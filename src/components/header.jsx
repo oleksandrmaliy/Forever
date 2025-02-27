@@ -1,6 +1,6 @@
 const Header = ({ children }) => {
   return (
-    <div className="p-1 text-center sm:p-2 md:p-3 lg:p-4 xl:p-5">
+    <div className="p-1 text-center sm:p-2 md:p-3 lg:p-4 xl:p-8">
       <h1 className="inline-block pt-5 font-vibes text-5xl whitespace-nowrap text-yellow-200 sm:pt-5 sm:text-6xl md:pt-6 md:text-7xl lg:pt-7 lg:text-8xl xl:pt-8 xl:text-9xl">
         Наталя М
       </h1>

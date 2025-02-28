@@ -6,6 +6,7 @@ import ShopBlock from "./components/shopBlock.jsx";
 import ForeverBlock from "./components/foreverBlock.jsx";
 import Footer from "./components/footer.jsx";
 import Bottom from "./components/bottom.jsx";
+import { ScrollToTopButton } from "./components/upBottom.jsx";
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           </Footer>
         </Container>
       </Bottom>
+      <ScrollToTopButton />
     </>
   );
 };

@@ -18,26 +18,83 @@ const ShopBlock = () => {
           />
         </div>
         <div className="col-span-3">
-          <p className="mb-8 indent-10">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ad
-            in debitis autem nesciunt aspernatur facere sit voluptates? Vitae
-            ratione optio deserunt veritatis laudantium nulla asperiores
-            recusandae officiis, odio obcaecati. Ullam nisi maiores corrupti
-            quis ut voluptas? Architecto suscipit nobis perspiciatis incidunt
-            deleniti, voluptatem blanditiis beatae pariatur velit dolor. Earum,
-            dolor ipsum saepe numquam non mollitia voluptatum fugit eos
-            voluptatem! Saepe qui quod, quos vitae obcaecati consectetur earum
-            eos nobis totam molestias repudiandae? Possimus ex natus, corporis
-            quos magni libero amet earum eum odio dolore! Dolorum consectetur
-            veritatis iusto dignissimos! Deleniti in, non velit, a esse nemo
-            quaerat numquam veniam eligendi ipsum ab ipsa fugiat unde ratione
-            saepe sunt ducimus impedit repellendus accusamus eius iusto odio.
-            Explicabo esse aliquam porro. Quam, enim amet tempore voluptate
-            vitae molestias pariatur necessitatibus aspernatur a molestiae
-            asperiores velit voluptatum et assumenda quis debitis nesciunt
-            veritatis doloribus dolorem voluptates. Sint fugiat modi ad eaque
-            illum!
-          </p>
+          <div className="mb-8">
+            <p className="mb-4">
+              <b>Онлайн магазин роздрібної торгівлі</b>
+            </p>
+            <p className="mb-4">
+              <b>Forever Living Products</b> – це міжнародний бренд, що
+              спеціалізується на виробництві та продажу натуральних продуктів на
+              основі алое вера. Продукція компанії допомагає підтримувати
+              здоров&apos;я, красу та гарне самопочуття.
+            </p>
+            <p>
+              <b>Асортимент продукції</b>
+            </p>
+            <ul className="mb-4">
+              <li>
+                ❤️ Гелі алое вера – натуральні напої для зміцнення імунітету та
+                покращення травлення.
+              </li>
+              <li>
+                ❤️ Косметика та догляд за шкірою – креми, лосьйони, гелі для
+                обличчя та тіла з доглядовими компонентами.
+              </li>
+              <li>
+                ❤️ Харчові добавки – вітаміни, мінерали та біологічно активні
+                речовини для підтримки організму.
+              </li>
+              <li>
+                ❤️ Продукти бджільництва – натуральні медові продукти для
+                енергії та імунітету.
+              </li>
+              <li>
+                ❤️ Програми детоксу та контролю ваги – комплекси для здорового
+                способу життя.
+              </li>
+            </ul>
+            <p>
+              <b>Переваги покупки у нас</b>
+            </p>
+            <ul className="mb-4">
+              <li>
+                ✅ Гарантія якості – продукція сертифікована та має високу
+                якість.
+              </li>
+              <li>
+                ✅ Безпосереднє постачання – товари надходять від офіційного
+                дистриб’ютора, без посередників.
+              </li>
+              <li>
+                ✅ Гнучка система знижок – постійним клієнтам надаються
+                спеціальні пропозиції.
+              </li>
+              <li>
+                ✅ Швидка доставка – оперативна обробка замовлень і відправка по
+                всій країні.
+              </li>
+              <li>
+                ✅ Персональні консультації – допомога у виборі продукції
+                відповідно до потреб.
+              </li>
+            </ul>
+            <p>
+              <b> Як зробити замовлення</b>
+            </p>
+            <ul className="mb-4">
+              <li> 1️⃣ Оберіть потрібні товари в каталозі.</li>
+              <li> 2️⃣ Додайте їх до кошика та оформіть замовлення.</li>
+              <li> 3️⃣ Оберіть зручний спосіб доставки та оплати.</li>
+              <li>
+                4️⃣ Отримайте свою продукцію та насолоджуйтесь користю
+                натуральних компонентів!
+              </li>
+            </ul>
+            <p>
+              Залишайтесь здоровими та красивими разом із Forever Living
+              Products! 💚
+            </p>
+          </div>
 
           <div className="border-4 border-red-500">
             <a

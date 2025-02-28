@@ -10,7 +10,7 @@ export default {
       },
       colors: {
         redcolor: "#D2865A",
-        greencolor: "45A284",
+        greencolor: "#45A284",
         bluecolor: "#81BEC5",
         browncolor: "#D5DCDE",
         yellowcolor: "#fef08a",
@@ -18,8 +18,8 @@ export default {
       },
       boxShadow: {
         "custom-green": "5px 5px 10px #22c55e",
-        "all-yellow": "0 0 10px 5px #fef08a",
-        "all-green": "0 0 48px 12px #14532d",
+        "all-yellow": "0 0 16px 16px #fef08a",
+        "all-green": "0 0 16px 16px #45A284",
       },
       container: {
         center: "true", // Центрує контейнер

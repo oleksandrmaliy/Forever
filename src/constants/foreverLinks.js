@@ -1,12 +1,12 @@
 import wiki from "../assets/images/foreverThumbs/wiki.jpg";
 import join from "../assets/images/foreverThumbs/join.jpg";
-import forever1 from "../assets/images/foreverThumbs/forever1.jpg";
+import forever from "../assets/images/foreverThumbs/forever.jpg";
 
 export const foreverLinks = [
   {
     title: "Головна сторінка Форевер",
     url: "https://foreverliving.ua/uk/",
-    thumb: forever1,
+    thumb: forever,
   },
   {
     title: "Приєднатися до Форевер",

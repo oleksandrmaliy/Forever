@@ -1,14 +1,41 @@
+import { useState, useEffect } from "react";
+
 import natalya from "../assets/images/natalya.jpg";
-import aloeVera from "../assets/images/aloeVera.jpg";
+import phone from "../assets/images/phone.jpg";
 
 const HeroBlock = () => {
+  const [showText, setShowText] = useState(false);
+  const [effect, setEffect] = useState(false);
+
+  const identity = "hero";
+
+  useEffect(() => {
+    if (!effect) {
+      return;
+    } else if (!showText) {
+      document.getElementById(identity)?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [effect, showText]);
+
+  const handleClick = () => {
+    setShowText(!showText);
+    setEffect(true);
+  };
+
   const scrollToFooter = () => {
     const footer = document.getElementById("footer");
     footer?.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
-    <div className="mb-8 grid min-h-110 w-full grid-cols-3 gap-8 border-4 border-red-500 bg-green-200 p-8">
-      <div className="relative border-4 border-red-500">
+    <div
+      id="hero"
+      className="mb-8 grid min-h-110 w-full grid-cols-3 gap-8 border-4 border-red-500 bg-green-100 p-8"
+    >
+      <div className="relative">
         <img
           src={natalya}
           alt="Natalya"
@@ -17,31 +44,83 @@ const HeroBlock = () => {
       </div>
 
       {/* sm:-top-8 md:-top-12 lg:-top-24 xl:-top-48 2xl:-top-60 */}
-      <div className="col-span-2">
-        <p className="mb-8 indent-14 text-xl">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
-          consectetur quia dolorum dignissimos? Minus accusamus explicabo,
-          repellat, libero vitae in unde porro reiciendis distinctio dolorum
-          quia aut nihil a? Ipsum. Consequuntur perspiciatis totam ratione
-          fugiat minus quisquam aspernatur laborum ut illum. Recusandae et
-          suscipit soluta cumque repellat nisi natus quod? Animi molestiae iusto
-          perspiciatis, officiis culpa consequatur pariatur molestias modi!
-          Beatae in, necessitatibus culpa reiciendis cum maiores perspiciatis
-          natus maxime quod, dolores accusamus exercitationem temporibus
-          nesciunt atque, facere velit dignissimos voluptates quas corrupti
-          asperiores. Tempora dolore at cum aliquid neque. Atque modi, inventore
-          aliquam laborum rerum iure consequatur? Quam eius quibusdam officia
-          nihil, mollitia ratione adipisci expedita tempore, perspiciatis
-          molestiae repellat delectus quas dolores tempora soluta consequatur
-          corrupti eos? Molestias.
-        </p>
-        <div className="border-4 border-red-500">
+      <div className="col-span-2 flex min-h-full flex-col justify-between">
+        <div className="mb-4 text-xl">
+          <div className="mb-4">
+            <p className="indent-14">
+              <b> Вітаю вас!</b>
+            </p>
+            <p className="indent-14">
+              Мене звати Наталя, і я – підприємець компанії Forever. Два роки
+              тому я зробила важливий вибір – розпочати власну справу, яка не
+              лише приносить дохід, а й наповнює моє життя сенсом та свободою.
+            </p>
+            {showText && (
+              <div>
+                <p className="indent-14">
+                  Коли я вперше познайомилася з продукцією Forever, мене вразила
+                  її якість і натуральний склад. Я зрозуміла, що хочу не просто
+                  користуватися нею сама, а й ділитися цими унікальними
+                  продуктами з іншими. Так і почався мій шлях у бізнесі, який
+                  відкрив переді мною безліч можливостей.
+                </p>
+                <p className="indent-14">
+                  Сьогодні я з упевненістю можу сказати, що Forever – це більше,
+                  ніж просто продукція. Це стиль життя, це можливість
+                  піклуватися про своє здоров’я, виглядати чудово та почуватися
+                  енергійною кожного дня. Крім того, це шанс для кожного, хто
+                  хоче змінити своє життя та знайти фінансову незалежність.
+                </p>
+                <p className="indent-14">
+                  Якщо ви хочете спробувати якісну продукцію Forever або
+                  дізнатися більше про можливості, які вона відкриває, буду рада
+                  допомогти вам підібрати ідеальний варіант саме для вас.
+                  Напишіть мені – з радістю поділюся своїм досвідом та підкажу
+                  найкраще рішення для ваших потреб!
+                </p>
+                <br />
+                <p className="indent-14">
+                  <b>Вітаю вас!</b>
+                </p>
+                <p className="indent-14">
+                  Мене звати Наталя, і я підприємець компанії Forever. Два роки
+                  тому я вирішила розпочати власну справу, яка дозволяє мені
+                  поєднувати якісні продукти для здоров’я та можливість
+                  розвитку.
+                </p>
+                <p className="indent-14">
+                  Продукція Forever привернула мою увагу своїм натуральним
+                  складом і високими стандартами якості. Я спробувала її сама,
+                  переконалася в результатах і вирішила поділитися цим з іншими.
+                  Так я прийшла до бізнесу, який став для мене не лише роботою,
+                  а й способом зробити щось корисне для людей.
+                </p>
+                <p className="indent-14">
+                  Forever – це можливість підтримувати здоров’я, доглядати за
+                  собою та обирати якісні продукти. Якщо вам цікаво дізнатися
+                  більше або спробувати продукцію, буду рада відповісти на
+                  запитання та допомогти з вибором.
+                </p>
+              </div>
+            )}
+          </div>
+
+          <div className="flex justify-center">
+            <button
+              onClick={handleClick}
+              className="cursor-pointer text-green-800"
+            >
+              {showText ? "Згорнути" : "Читати більше..."}
+            </button>
+          </div>
+        </div>
+        <div className="mt-auto border-4 border-red-500">
           <button
             onClick={scrollToFooter}
             className="flex w-full items-center gap-4 bg-blue-300 p-4 hover:bg-red-300"
           >
             <img
-              src={aloeVera}
+              src={phone}
               alt="Avatar"
               className="h-auto w-24 rounded-full border-4 border-red-500"
             />

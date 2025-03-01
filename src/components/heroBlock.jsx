@@ -10,9 +10,7 @@ const HeroBlock = () => {
   const identity = "hero";
 
   useEffect(() => {
-    if (!effect) {
-      return;
-    } else if (!showText) {
+    if (effect & !showText) {
       document.getElementById(identity)?.scrollIntoView({
         behavior: "smooth",
         block: "center",
@@ -108,7 +106,7 @@ const HeroBlock = () => {
           <div className="flex justify-center">
             <button
               onClick={handleClick}
-              className="cursor-pointer text-green-800"
+              className="cursor-pointer text-green-500"
             >
               {showText ? "Згорнути" : "Читати більше..."}
             </button>

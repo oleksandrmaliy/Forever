@@ -15,6 +15,7 @@ export default {
         browncolor: "#D5DCDE",
         yellowcolor: "#fef08a",
         backcolor: "#D5DCDE",
+        forevercolor: "#93D1C1",
       },
       boxShadow: {
         "custom-green": "5px 5px 10px #22c55e",

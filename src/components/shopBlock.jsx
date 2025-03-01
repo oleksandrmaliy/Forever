@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import retailStore2 from "../assets/images/retailStore2.jpg";
 import shop from "../assets/images/shop.jpg";
 
-// import { storeLinks } from "../constants/storeLinks.js";
-
 const ShopBlock = () => {
   const [showText, setShowtext] = useState(false);
   const [effect, setEffect] = useState(false);
@@ -12,9 +10,7 @@ const ShopBlock = () => {
   const identity = "shop";
 
   useEffect(() => {
-    if (!effect) {
-      return;
-    } else if (!showText) {
+    if (effect & !showText) {
       document.getElementById(identity)?.scrollIntoView({
         behavior: "smooth",
         block: "center",
@@ -30,16 +26,19 @@ const ShopBlock = () => {
   return (
     <div
       id="shop"
-      className="mx-8 mb-8 grid grid-cols-4 gap-8 border-4 border-red-500 bg-sky-100 p-8"
+      className="mx-8 mb-8 grid grid-cols-3 gap-8 border-4 border-red-500 bg-sky-100 p-8"
     >
-      <div className="relative">
-        <img
-          src={retailStore2}
-          alt="Store"
-          className="relative -top-12 w-full rounded-full border-8 border-white shadow-all-green"
-        />
+      <div className="flex items-center justify-center">
+        <div className="relative mx-auto w-2/3">
+          <img
+            src={retailStore2}
+            alt="Store"
+            className="relative w-full rounded-full border-8 border-white"
+          />
+        </div>
       </div>
-      <div className="col-span-3 flex min-h-full flex-col justify-between">
+
+      <div className="col-span-2 flex min-h-full flex-col justify-between">
         <div className="mb-4">
           <div className="mb-4">
             <p className="mb-4">
@@ -51,6 +50,7 @@ const ShopBlock = () => {
               основі алое вера. Продукція компанії допомагає підтримувати
               здоров&apos;я, красу та гарне самопочуття.
             </p>
+
             {showText && (
               <div>
                 <p>
@@ -125,7 +125,7 @@ const ShopBlock = () => {
           <div className="flex justify-center">
             <button
               onClick={handleClick}
-              className="cursor-pointer text-green-800"
+              className="cursor-pointer text-blue-500"
             >
               {showText ? "Згорнути" : "Читати більше..."}
             </button>
@@ -148,6 +148,15 @@ const ShopBlock = () => {
               Перейти до магазину
             </p>
           </a>
+        </div>
+        <div className="relative h-[1800px] border-4 border-red-500 bg-gray-200 p-16">
+          <div className="sticky top-[calc(50%-50px)] flex justify-center">
+            <img
+              src={retailStore2}
+              alt="Store"
+              className="max-h-full w-1/5 rounded-full border-8 border-white shadow-all-green"
+            />
+          </div>
         </div>
       </div>
     </div>

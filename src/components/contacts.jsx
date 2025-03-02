@@ -28,7 +28,7 @@ const Contacts = () => {
           <FaWhatsapp className={classname} />
         </a>
         <a
-          href="https://m.me/username_or_id"
+          href="https://m.me/natasha.maliy1"
           target="_blank"
           rel="noopener noreferrer"
         >

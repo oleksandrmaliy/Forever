@@ -3,6 +3,7 @@ import { RiTelegramLine } from "react-icons/ri";
 import { FaViber } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { RiMessengerLine } from "react-icons/ri";
+import { MdAlternateEmail } from "react-icons/md";
 
 const Contacts = () => {
   const classname = "size-20 text-white";
@@ -39,6 +40,9 @@ const Contacts = () => {
           rel="noopener noreferrer"
         >
           <FaViber className={classname} />
+        </a>
+        <a href="mailto:user@gmail.com?subject=Замовлення продукції Форевер&body=ПривітБ Наталя!?">
+          <MdAlternateEmail className={classname} />
         </a>
       </div>
     </div>

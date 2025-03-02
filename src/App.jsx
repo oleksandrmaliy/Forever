@@ -29,10 +29,7 @@ const App = () => {
       </Container>
       <Bottom>
         <Container>
-          <Footer>
-            <p>Footer</p>
-            <p>Hello, world!</p>
-          </Footer>
+          <Footer />
         </Container>
       </Bottom>
       <ScrollToTopButton />

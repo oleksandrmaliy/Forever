@@ -31,12 +31,12 @@ const ForeverBlock = () => {
       id="forever"
       className="mx-8 mb-8 grid grid-cols-3 gap-8 border-4 border-red-500 bg-sky-100 p-8"
     >
-      <div className="flex items-center justify-center">
-        <div className="relative mx-auto w-2/3">
+      <div className="relative">
+        <div className="sticky top-[calc(50%-145px)] mx-auto w-2/3 ">
           <img
             src={forever4}
             alt="Опис фото"
-            className="relative w-full rounded-full border-8 border-white"
+            className="w-full rounded-full border-8 border-white"
           />
         </div>
       </div>
@@ -84,7 +84,7 @@ const ForeverBlock = () => {
                   Вся продукція проходить суворий контроль якості, а компанія
                   дотримується міжнародних стандартів сертифікації.
                 </p>
-                <p>
+                {/* <p>
                   <b> Основні напрямки продукції</b>
                 </p>
                 <ul className="mb-4">
@@ -93,7 +93,7 @@ const ForeverBlock = () => {
                     та підтримки здоров’я.
                   </li>
                   <li>
-                    {" "}
+                   
                     🍯 Продукти бджільництва – мед, маточне молочко,
                     прополіс.{" "}
                   </li>
@@ -109,7 +109,7 @@ const ForeverBlock = () => {
                     🏋️ Програми детоксу та контролю ваги – комплексні рішення
                     для здорового способу життя.
                   </li>
-                </ul>
+                </ul> */}
                 <p className="mb-4">
                   Бізнес-модель та принципи Forever Living Products працює за
                   моделлю мережевого маркетингу (MLM), що дозволяє незалежним

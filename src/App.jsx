@@ -8,6 +8,9 @@ import Footer from "./components/footer.jsx";
 import Bottom from "./components/bottom.jsx";
 import { ScrollToTopButton } from "./components/upBottom.jsx";
 
+import ScrollAnimation from "./components/xtest.jsx";
+import ScrollAnimation2 from "./components/xxtest.jsx";
+
 const App = () => {
   return (
     <>
@@ -19,6 +22,8 @@ const App = () => {
       <Container>
         <HeroBlock />
         <ShopBlock />
+        <ScrollAnimation />
+        <ScrollAnimation2 />
         <ForeverBlock />
         {/* <div className="h-12 w-12 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
           <div className="h-10 w-10 animate-ping rounded-full bg-blue-500"></div>

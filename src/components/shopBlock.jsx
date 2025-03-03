@@ -28,12 +28,12 @@ const ShopBlock = () => {
       id="shop"
       className="mx-8 mb-8 grid grid-cols-3 gap-8 border-4 border-red-500 bg-sky-100 p-8"
     >
-      <div className="flex items-center justify-center">
-        <div className="relative mx-auto w-2/3">
+      <div className="relative">
+        <div className="sticky top-[calc(50%-145px)] mx-auto w-2/3">
           <img
             src={retailStore2}
             alt="Store"
-            className="relative w-full rounded-full border-8 border-white"
+            className="w-full rounded-full border-8 border-white"
           />
         </div>
       </div>
@@ -149,7 +149,7 @@ const ShopBlock = () => {
             </p>
           </a>
         </div>
-        <div className="relative h-[1800px] border-4 border-red-500 bg-gray-200 p-16">
+        {/* <div className="relative h-[1800px] border-4 border-red-500 bg-gray-200 p-16">
           <div className="sticky top-[calc(50%-50px)] flex justify-center">
             <img
               src={retailStore2}
@@ -157,7 +157,7 @@ const ShopBlock = () => {
               className="max-h-full w-1/5 rounded-full border-8 border-white shadow-all-green"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

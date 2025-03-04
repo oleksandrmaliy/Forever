@@ -1,14 +1,48 @@
 import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
-// const id = nanoid(); //=> "V1StGXR8_Z5jdHi6B-myT"
-// import q from "../assets/images/thumbs/bee.png";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import forever4 from "../assets/images/forever4.jpg";
 
 import { foreverLinks } from "../constants/foreverLinks.js";
 
+const useScrollDirection = () => {
+  const [direction, setDirection] = useState(null);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [trigger, setTrigger] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setDirection("down");
+      } else if (currentScrollY < lastScrollY) {
+        setDirection("up");
+      }
+      setLastScrollY(currentScrollY);
+      setTrigger((prev) => prev + 1); // Змінюємо trigger кожного разу
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  return { direction, trigger };
+};
+
 const ForeverBlock = () => {
   const [showText, setShowText] = useState(false);
   const [effect, setEffect] = useState(false);
+
+  const [animationStage, setAnimationStage] = useState("center");
+
+  const { direction: scrollDirection, trigger } = useScrollDirection();
+
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
 
   const identity = "forever";
 
@@ -21,6 +55,31 @@ const ForeverBlock = () => {
     }
   }, [showText, effect]);
 
+  useEffect(() => {
+    if (!inView || !scrollDirection) return;
+
+    setAnimationStage("move-30");
+
+    setTimeout(() => {
+      setAnimationStage("overshoot-10");
+
+      setTimeout(() => {
+        setAnimationStage("center");
+      }, 300);
+    }, 300);
+  }, [trigger, inView, scrollDirection]); // Додаємо `trigger` для перезапуску анімації при кожному скролі
+
+  const getTranslateY = () => {
+    switch (animationStage) {
+      case "move-30":
+        return scrollDirection === "down" ? "-10%" : "10%";
+      case "overshoot-10":
+        return scrollDirection === "down" ? "5%" : "-5%";
+      default:
+        return "0%";
+    }
+  };
+
   const handleClick = () => {
     setShowText(!showText);
     setEffect(true);
@@ -29,16 +88,28 @@ const ForeverBlock = () => {
   return (
     <div
       id="forever"
-      className="mx-8 mb-8 grid grid-cols-3 gap-8 border-4 border-red-500 bg-sky-100 p-8"
+      className="xk:p-8 mx-8 mb-4 grid grid-cols-1 gap-4 border-4 border-red-500 bg-sky-100 p-4 sm:mb-5 sm:gap-5 sm:p-5 md:mb-6 md:grid-cols-3 md:p-6 lg:mb-7 lg:p-7 xl:mb-8"
     >
-      <div className="relative">
-        <div className="sticky top-[calc(50%-145px)] mx-auto w-2/3 ">
+      <div className="relative border-4 border-red-500">
+        <motion.div
+          ref={ref}
+          className="sticky top-[calc(50%-150px)] mx-auto flex h-auto w-1/2 items-center justify-center md:w-2/3"
+          animate={{ y: getTranslateY() }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
           <img
             src={forever4}
             alt="Опис фото"
             className="w-full rounded-full border-8 border-white"
           />
-        </div>
+        </motion.div>
+        {/* <div className="sticky top-[calc(50%-150px)] mx-auto w-2/3">
+          <img
+            src={forever4}
+            alt="Опис фото"
+            className="w-full rounded-full border-8 border-white"
+          />
+        </div> */}
       </div>
 
       <div className="col-span-2 flex min-h-full flex-col justify-between">
@@ -142,8 +213,8 @@ const ForeverBlock = () => {
         </div>
 
         <div className="mt-auto border-4 border-red-500">
-          <ul className="grid grid-cols-3 gap-8">
-            {foreverLinks.map(({ title, url, thumb }) => (
+          <ul className="grid grid-cols-1 gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:grid-cols-3 xl:gap-8">
+            {foreverLinks.map(({ title, url }) => (
               <li
                 key={nanoid()}
                 className="bg-forevercolor p-4 hover:bg-red-300"
@@ -152,13 +223,13 @@ const ForeverBlock = () => {
                   href={url}
                   target="_blank"
                   rel="nofollow noopener noreferrer"
-                  className="flex items-center gap-4"
+                  className="flex items-center"
                 >
-                  <img
+                  {/* <img
                     src={thumb}
                     alt="Avatar"
                     className="h-auto w-24 rounded-full border-4 border-red-500"
-                  />
+                  /> */}
                   <p className="flex h-full w-full items-center justify-center text-center">
                     {title}
                   </p>

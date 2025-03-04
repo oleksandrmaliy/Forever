@@ -20,7 +20,11 @@
 // </div>
 
 const Top = ({ children }) => {
-  return <div className="mb-8 w-full bg-greencolor">{children}</div>;
+  return (
+    <div className="mb-4 w-full bg-greencolor sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8">
+      {children}
+    </div>
+  );
 };
 
 export default Top;

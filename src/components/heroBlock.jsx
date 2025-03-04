@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import natalya from "../assets/images/natalya.jpg";
-import phone from "../assets/images/phone.jpg";
+// import phone from "../assets/images/phone.jpg";
 
 const HeroBlock = () => {
   const [showText, setShowText] = useState(false);
@@ -31,21 +31,21 @@ const HeroBlock = () => {
   return (
     <div
       id="hero"
-      className="mb-8 grid min-h-110 w-full grid-cols-3 gap-8 border-4 border-red-500 bg-green-100 p-8"
+      className="mb-4 grid grid-cols-1 border-4 border-red-500 bg-green-100 p-4 sm:mb-5 sm:p-5 md:mb-6 md:grid md:grid-cols-3 md:gap-6 md:p-6 lg:mb-7 lg:gap-7 lg:p-7 xl:mb-8 xl:gap-8 xl:p-8"
     >
-      <div className="relative">
+      <div className="mb-4 border-4 border-red-500 sm:mb-5 md:relative md:mb-0">
         <img
           src={natalya}
           alt="Natalya"
-          className="absolute -top-24 -left-0 w-full rounded-full border-8 border-white shadow-all-green"
+          className="-mt-6 w-2/3 rounded-full border-8 border-white shadow-all-green sm:-mt-7 md:relative md:-top-12 md:-left-0 md:w-full lg:-top-16 xl:-top-20"
         />
       </div>
 
       {/* sm:-top-8 md:-top-12 lg:-top-24 xl:-top-48 2xl:-top-60 */}
       <div className="col-span-2 flex min-h-full flex-col justify-between">
-        <div className="mb-4 text-xl">
+        <div className="mb-4">
           <div className="mb-4">
-            <p className="indent-14">
+            <p className="mb-4 indent-14">
               <b> Вітаю вас!</b>
             </p>
             <p className="indent-14">
@@ -55,7 +55,7 @@ const HeroBlock = () => {
             </p>
             {showText && (
               <div>
-                {/* <p className="indent-14">
+                <p className="indent-14">
                   Коли я вперше познайомилася з продукцією Forever, мене вразила
                   її якість і натуральний склад. Я зрозуміла, що хочу не просто
                   користуватися нею сама, а й ділитися цими унікальними
@@ -76,7 +76,7 @@ const HeroBlock = () => {
                   Напишіть мені – з радістю поділюся своїм досвідом та підкажу
                   найкраще рішення для ваших потреб!
                 </p>
-                <br /> */}
+                <br />
                 <p className="indent-14">
                   <b>Вітаю вас!</b>
                 </p>
@@ -115,14 +115,14 @@ const HeroBlock = () => {
         <div className="mt-auto border-4 border-red-500">
           <button
             onClick={scrollToFooter}
-            className="flex w-full items-center gap-4 bg-blue-300 p-4 hover:bg-red-300"
+            className="flex w-full items-center bg-blue-300 p-4 hover:bg-red-300"
           >
-            <img
+            {/* <img
               src={phone}
               alt="Avatar"
               className="h-auto w-24 rounded-full border-4 border-red-500"
-            />
-            <p className="flex h-full w-full items-center justify-center text-center">
+            /> */}
+            <p className="flex h-full w-full items-center justify-center text-center font-bold">
               Зв&apos;яжіться зі мною
             </p>
           </button>

@@ -1,11 +1,37 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import retailStore2 from "../assets/images/retailStore2.jpg";
-import shop from "../assets/images/shop.jpg";
+// import shop from "../assets/images/shop.jpg";
+
+const useScrollTrigger = () => {
+  const [trigger, setTrigger] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setTrigger((prev) => prev + 1);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return trigger;
+};
 
 const ShopBlock = () => {
   const [showText, setShowtext] = useState(false);
   const [effect, setEffect] = useState(false);
+
+  const scrollTrigger = useScrollTrigger();
+  const [animationStage, setAnimationStage] = useState("normal");
+
+  // Відстежуємо, чи дів2 у вьюпорті
+  const { ref, inView } = useInView({
+    triggerOnce: false, // Завжди відстежуємо видимість
+    threshold: 0.1, // 10% блоку має бути видно
+  });
 
   const identity = "shop";
 
@@ -18,6 +44,31 @@ const ShopBlock = () => {
     }
   }, [showText, effect]);
 
+  useEffect(() => {
+    if (!inView) return; // Запускаємо анімацію тільки якщо div2 у вьюпорті
+
+    setAnimationStage("scale-up");
+
+    setTimeout(() => {
+      setAnimationStage("scale-down");
+
+      setTimeout(() => {
+        setAnimationStage("normal");
+      }, 300);
+    }, 300);
+  }, [scrollTrigger, inView]);
+
+  const getScale = () => {
+    switch (animationStage) {
+      case "scale-up":
+        return 1.1;
+      case "scale-down":
+        return 0.95;
+      default:
+        return 1;
+    }
+  };
+
   const handleClick = () => {
     setShowtext(!showText);
     setEffect(true);
@@ -26,16 +77,22 @@ const ShopBlock = () => {
   return (
     <div
       id="shop"
-      className="mx-8 mb-8 grid grid-cols-3 gap-8 border-4 border-red-500 bg-sky-100 p-8"
+      className="mx-8 mb-4 grid grid-cols-1 border-4 border-red-500 bg-sky-100 p-4 sm:mb-5 sm:p-5 md:mb-6 md:grid-cols-3 md:gap-6 md:p-6 lg:mb-7 lg:gap-7 lg:p-7 xl:mb-8 xl:gap-8 xl:p-8"
+      // className="mb-8 grid min-h-110 w-full grid-cols-1 border-4 border-red-500 bg-green-100 p-4 md:grid-cols-3 md:gap-8 md:p-6 lg:p-7 xl:p-8"
     >
-      <div className="relative">
-        <div className="sticky top-[calc(50%-145px)] mx-auto w-2/3">
+      <div className="relative mb-4 border-4 border-red-500 sm:mb-5 md:mb-0">
+        <motion.div
+          ref={ref} // Додаємо ref для відстеження видимості
+          className="sticky top-[calc(50%-150px)] mx-auto flex h-auto w-1/2 items-center justify-center md:w-2/3"
+          animate={{ scale: getScale() }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
           <img
             src={retailStore2}
             alt="Store"
             className="w-full rounded-full border-8 border-white"
           />
-        </div>
+        </motion.div>
       </div>
 
       <div className="col-span-2 flex min-h-full flex-col justify-between">
@@ -139,12 +196,12 @@ const ShopBlock = () => {
             rel="nofollow noopener noreferrer"
             className="flex items-center gap-4 bg-blue-300 p-4 hover:bg-red-300"
           >
-            <img
+            {/* <img
               src={shop}
               alt="Avatar"
               className="h-auto w-24 rounded-full border-4 border-red-500"
-            />
-            <p className="flex h-full w-full items-center justify-center text-center">
+            /> */}
+            <p className="flex h-full w-full items-center justify-center text-center font-bold">
               Перейти до магазину
             </p>
           </a>

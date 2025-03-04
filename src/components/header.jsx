@@ -1,10 +1,10 @@
 const Header = ({ children }) => {
   return (
-    <div className="p-1 text-center sm:p-2 md:p-3 lg:p-4 xl:p-8">
-      <h1 className="inline-block pt-5 font-vibes text-5xl whitespace-nowrap text-white sm:pt-5 sm:text-6xl md:pt-6 md:text-7xl lg:pt-7 lg:text-8xl xl:pt-8 xl:text-9xl">
+    <div className="flex flex-col justify-center pt-6 pb-4 sm:pt-7 sm:pb-5 md:pt-8 md:pb-6 lg:pt-9 lg:pb-7 xl:pt-10 xl:pb-8">
+      <h1 className="mx-auto font-vibes text-5xl text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
         Наталя М
       </h1>
-      <h3 className="font-poiret text-lg text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl">
+      <h3 className="mx-auto font-poiret text-lg text-white sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl">
         Підприємець Форевер
       </h3>
 

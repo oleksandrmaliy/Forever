@@ -38,10 +38,10 @@ const ScrollAnimation = () => {
   useEffect(() => {
     if (!inView || !scrollDirection) return;
 
-    setAnimationStage("move-50");
+    setAnimationStage("move-10");
 
     setTimeout(() => {
-      setAnimationStage("overshoot-30");
+      setAnimationStage("overshoot-5");
 
       setTimeout(() => {
         setAnimationStage("center");
@@ -51,10 +51,10 @@ const ScrollAnimation = () => {
 
   const getTranslateY = () => {
     switch (animationStage) {
-      case "move-50":
+      case "move-10":
         return scrollDirection === "down" ? "-50%" : "50%";
-      case "overshoot-30":
-        return scrollDirection === "down" ? "10%" : "-10%";
+      case "overshoot-5":
+        return scrollDirection === "down" ? "30%" : "-30%";
       default:
         return "0%";
     }

@@ -6,10 +6,11 @@ import { RiMessengerLine } from "react-icons/ri";
 import { MdAlternateEmail } from "react-icons/md";
 
 const Contacts = () => {
-  const classname = "size-20 text-white";
+  const classname =
+    "size-14 sm:size-15 md:size-16 lg:size-18 xl:size-20 text-white";
   return (
-    <div className="mb-8 flex justify-center">
-      <div className="mx-auto flex flex-row gap-4">
+    <div className="flex justify-center">
+      <div className="mx-auto grid grid-cols-3 gap-4 sm:grid-cols-6 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8">
         <a href="tel:+380509967575">
           <FiPhoneCall className={classname} />
         </a>
@@ -41,7 +42,7 @@ const Contacts = () => {
         >
           <FaViber className={classname} />
         </a>
-        <a href="mailto:user@gmail.com?subject=Замовлення продукції Форевер&body=ПривітБ Наталя!?">
+        <a href="mailto:user@gmail.com?subject=Замовлення%20продукції%20Форевер&body=Вітаю,%20Наталі!">
           <MdAlternateEmail className={classname} />
         </a>
       </div>

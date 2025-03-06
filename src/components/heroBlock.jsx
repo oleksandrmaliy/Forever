@@ -42,7 +42,7 @@ const HeroBlock = () => {
       </div>
 
       {/* sm:-top-8 md:-top-12 lg:-top-24 xl:-top-48 2xl:-top-60 */}
-      <div className="col-span-2 flex min-h-full flex-col justify-between">
+      <div className="col-span-2 flex flex-col justify-between">
         <div className="mb-4">
           <div className="mb-4">
             <p className="mb-4 indent-14">

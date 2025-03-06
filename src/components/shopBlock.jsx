@@ -95,7 +95,7 @@ const ShopBlock = () => {
         </motion.div>
       </div>
 
-      <div className="col-span-2 flex min-h-full flex-col justify-between">
+      <div className="col-span-2 flex flex-col justify-between">
         <div className="mb-4">
           <div className="mb-4">
             <p className="mb-4">

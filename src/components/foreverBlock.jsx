@@ -72,9 +72,9 @@ const ForeverBlock = () => {
   const getTranslateY = () => {
     switch (animationStage) {
       case "move-30":
-        return scrollDirection === "down" ? "-10%" : "10%";
+        return scrollDirection === "down" ? "30%" : "-30%";
       case "overshoot-10":
-        return scrollDirection === "down" ? "5%" : "-5%";
+        return scrollDirection === "down" ? "-5%" : "5%";
       default:
         return "0%";
     }
@@ -112,7 +112,7 @@ const ForeverBlock = () => {
         </div> */}
       </div>
 
-      <div className="col-span-2 flex min-h-full flex-col justify-between">
+      <div className="col-span-2 flex flex-col justify-between">
         <div className="mb-4">
           <div className="mb-4">
             <p className="mb-4">

@@ -76,7 +76,7 @@ const ShopBlock = () => {
   return (
     <div
       id="shop"
-      className="mx-8 mb-4 grid grid-cols-1 bg-sky-100 p-4 sm:mb-5 sm:p-5 md:mb-6 md:grid-cols-3 md:gap-6 md:p-6 lg:mb-7 lg:gap-7 lg:p-7 xl:mb-8 xl:gap-8 xl:p-8"
+      className="mb-4 grid grid-cols-1 bg-sky-100 p-4 sm:mb-5 sm:p-5 md:mb-6 md:grid-cols-3 md:gap-6 md:p-6 lg:mb-7 lg:gap-7 lg:p-7 xl:mb-8 xl:gap-8 xl:p-8"
       // className="mb-8 grid min-h-110 w-full grid-cols-1 border-4 border-red-500 bg-green-100 p-4 md:grid-cols-3 md:gap-8 md:p-6 lg:p-7 xl:p-8"
     >
       <div className="relative mb-4 sm:mb-5 md:mb-0">
@@ -101,10 +101,9 @@ const ShopBlock = () => {
               <b>Онлайн магазин роздрібної торгівлі</b>
             </p>
             <p className="mb-4">
-              <b>Forever Living Products</b> – це міжнародний бренд, що
-              спеціалізується на виробництві та продажу натуральних продуктів на
-              основі алое вера. Продукція компанії допомагає підтримувати
-              здоров&apos;я, красу та гарне самопочуття.
+              Forever Living Products – це міжнародний бренд, що спеціалізується
+              на виробництві та продажу натуральних продуктів, які допомагають
+              підтримувати здоров&apos;я, красу та гарне самопочуття.
             </p>
 
             {showText && (
@@ -114,24 +113,33 @@ const ShopBlock = () => {
                 </p>
                 <ul className="mb-4">
                   <li>
-                    Гелі алое вера – натуральні напої для зміцнення імунітету та
-                    покращення травлення.
+                    <span className="font-medium italic">Гелі алое вера </span>–
+                    натуральні напої для зміцнення імунітету та покращення
+                    травлення.
                   </li>
                   <li>
-                    Косметика та догляд за шкірою – креми, лосьйони, гелі для
-                    обличчя та тіла з доглядовими компонентами.
+                    <span className="font-medium italic">
+                      Косметика та догляд за шкірою{" "}
+                    </span>
+                    – креми, лосьйони, гелі для обличчя та тіла з доглядовими
+                    компонентами.
                   </li>
                   <li>
-                    Харчові добавки – вітаміни, мінерали та біологічно активні
-                    речовини для підтримки організму.
+                    <span className="font-medium italic">Харчові добавки </span>
+                    – вітаміни, мінерали та біологічно активні речовини для
+                    підтримки організму.
                   </li>
                   <li>
-                    Продукти бджільництва – натуральні медові продукти для
-                    енергії та імунітету.
+                    <span className="font-medium italic">
+                      Продукти бджільництва{" "}
+                    </span>
+                    – натуральні медові продукти для енергії та імунітету.
                   </li>
                   <li>
-                    Програми детоксу та контролю ваги – комплекси для здорового
-                    способу життя.
+                    <span className="font-medium italic">
+                      Програми детоксу та контролю ваги{" "}
+                    </span>
+                    – комплекси для здорового способу життя.
                   </li>
                 </ul>
                 <p>
@@ -139,24 +147,31 @@ const ShopBlock = () => {
                 </p>
                 <ul className="mb-4">
                   <li>
-                    Гарантія якості – продукція сертифікована та має високу
-                    якість.
+                    <span className="font-medium italic">Гарантія якості </span>
+                    – продукція сертифікована та має високу якість.
                   </li>
                   <li>
-                    Безпосереднє постачання – товари надходять від офіційного
-                    дистриб’ютора, без посередників.
+                    <span className="font-medium italic">
+                      Безпосереднє постачання{" "}
+                    </span>
+                    – товари надходять від офіційного дистриб’ютора, без
+                    посередників.
                   </li>
                   <li>
-                    Гнучка система знижок – постійним клієнтам надаються
-                    спеціальні пропозиції.
+                    <span className="font-medium italic">
+                      Гнучка система знижок{" "}
+                    </span>
+                    – постійним клієнтам надаються спеціальні пропозиції.
                   </li>
                   <li>
-                    Швидка доставка – оперативна обробка замовлень і відправка
-                    по всій країні.
+                    <span className="font-medium italic">Швидка доставка </span>
+                    – оперативна обробка замовлень і відправка по всій країні.
                   </li>
                   <li>
-                    Персональні консультації – допомога у виборі продукції
-                    відповідно до потреб.
+                    <span className="font-medium italic">
+                      Персональні консультації{" "}
+                    </span>
+                    – допомога у виборі продукції відповідно до потреб.
                   </li>
                 </ul>
                 <p>
@@ -193,9 +208,9 @@ const ShopBlock = () => {
             href="https://380500014529.flpuretail.com/uk/"
             target="_blank"
             rel="nofollow noopener noreferrer"
-            className="flex items-center gap-4 bg-blue-300 p-4 hover:bg-red-300"
+            className="flex items-center gap-4 bg-bluecolor p-4 hover:bg-redcolor hover:text-white"
           >
-            <p className="flex h-full w-full items-center justify-center text-center font-bold">
+            <p className="flex h-full w-full items-center justify-center text-center">
               Перейти до магазину
             </p>
           </a>

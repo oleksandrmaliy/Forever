@@ -7,41 +7,32 @@ import forever4 from "../assets/images/forever4.jpg";
 
 import { foreverLinks } from "../constants/foreverLinks.js";
 
-const useScrollDirection = () => {
-  const [direction, setDirection] = useState(null);
-  const [lastScrollY, setLastScrollY] = useState(0);
+const useScrollTrigger = () => {
   const [trigger, setTrigger] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY) {
-        setDirection("down");
-      } else if (currentScrollY < lastScrollY) {
-        setDirection("up");
-      }
-      setLastScrollY(currentScrollY);
-      setTrigger((prev) => prev + 1); // Змінюємо trigger кожного разу
+      setTrigger((prev) => prev + 1);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
-  return { direction, trigger };
+  return trigger;
 };
 
 const ForeverBlock = () => {
   const [showText, setShowText] = useState(false);
   const [effect, setEffect] = useState(false);
 
-  const [animationStage, setAnimationStage] = useState("center");
+  const scrollTrigger = useScrollTrigger();
+  const [animationStage, setAnimationStage] = useState("normal");
 
-  const { direction: scrollDirection, trigger } = useScrollDirection();
-
+  // Відстежуємо, чи дів2 у вьюпорті
   const { ref, inView } = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
+    triggerOnce: false, // Завжди відстежуємо видимість
+    threshold: 0.1, // 10% блоку має бути видно
   });
 
   const identity = "forever";
@@ -56,27 +47,27 @@ const ForeverBlock = () => {
   }, [showText, effect]);
 
   useEffect(() => {
-    if (!inView || !scrollDirection) return;
+    if (!inView) return; // Запускаємо анімацію тільки якщо div2 у вьюпорті
 
-    setAnimationStage("move-30");
+    setAnimationStage("scale-up");
 
     setTimeout(() => {
-      // setAnimationStage("overshoot-10");
-      setAnimationStage("center");
+      // setAnimationStage("scale-down");
+      setAnimationStage("normal");
       // setTimeout(() => {
 
       // }, 300);
     }, 300);
-  }, [trigger, inView, scrollDirection]); // Додаємо `trigger` для перезапуску анімації при кожному скролі
+  }, [scrollTrigger, inView]);
 
-  const getTranslateY = () => {
+  const getScale = () => {
     switch (animationStage) {
-      case "move-30":
-        return scrollDirection === "down" ? "30%" : "-30%";
-      // case "overshoot-10":
-      //   return scrollDirection === "down" ? "-5%" : "5%";
+      case "scale-up":
+        return 1.1;
+      case "scale-down":
+        return 0.95;
       default:
-        return "0%";
+        return 1;
     }
   };
 
@@ -88,13 +79,13 @@ const ForeverBlock = () => {
   return (
     <div
       id="forever"
-      className="xk:p-8 mx-8 mb-4 grid grid-cols-1 gap-4 bg-sky-100 p-4 sm:mb-5 sm:gap-5 sm:p-5 md:mb-6 md:grid-cols-3 md:p-6 lg:mb-7 lg:p-7 xl:mb-8"
+      className="mb-4 grid grid-cols-1 gap-4 bg-sky-100 p-4 sm:mb-5 sm:gap-5 sm:p-5 md:mb-6 md:grid-cols-3 md:p-6 lg:mb-7 lg:p-7 xl:mb-8 xl:p-8"
     >
       <div className="relative">
         <motion.div
-          ref={ref}
           className="sticky top-[calc(50%-150px)] mx-auto flex h-auto w-1/2 items-center justify-center md:w-2/3"
-          animate={{ y: getTranslateY() }}
+          ref={ref} // Додаємо ref для відстеження видимості
+          animate={{ scale: getScale() }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <img
@@ -109,17 +100,12 @@ const ForeverBlock = () => {
         <div className="mb-4">
           <div className="mb-4">
             <p className="mb-4">
-              <b>
-                Forever Living Products – міжнародний лідер у виробництві
-                продукції на основі алое вера
-              </b>
+              <b>Forever Living Products</b>
             </p>
             <p className="mb-4">
               Forever Living Products – це американська компанія, заснована у
-              1978 році в місті Скоттсдейл, штат Аризона. Вона спеціалізується
-              на вирощуванні, виробництві та дистрибуції продуктів на основі
-              алое вера, а також пропонує широкий асортимент харчових добавок,
-              засобів догляду за шкірою та іншої продукції для здоров’я.
+              1978 році в місті Скоттсдейл, штат Аризона, і є міжнародним
+              лідером у виробництві продукції для здоров’я на основі алое вера.
             </p>
 
             {showText && (
@@ -128,42 +114,63 @@ const ForeverBlock = () => {
                   <b> Основні факти про компанію:</b>
                 </p>
                 <ul className="mb-4">
-                  <li>Рік заснування: 1978</li>
-                  <li>Засновник: Рекс Моан (Rex Maughan)</li>
-                  <li>Штаб-квартира: Скоттсдейл, Аризона, США</li>
                   <li>
-                    Діяльність: Виробництво та продаж продукції для здоров’я та
-                    краси
+                    <span className="font-medium italic">Рік заснування: </span>
+                    1978
                   </li>
                   <li>
-                    Продукція: Напої з алое вера, біологічно активні добавки,
-                    косметика, продукти бджільництва
+                    <span className="font-medium italic">Засновник: </span>Рекс
+                    Моан (Rex Maughan)
                   </li>
-                  <li>Мережа дистрибуції: Понад 160 країн </li>
+                  <li>
+                    <span className="font-medium italic">Штаб-квартира: </span>
+                    Скоттсдейл, Аризона, США
+                  </li>
+                  <li>
+                    <span className="font-medium italic">Діяльність: </span>
+                    Виробництво та продаж продукції для здоров’я та краси
+                  </li>
+                  <li>
+                    <span className="font-medium italic">Продукція: </span>
+                    Напої з алое вера, біологічно активні добавки, косметика,
+                    продукти бджільництва
+                  </li>
+                  <li>
+                    <span className="font-medium italic">
+                      Мережа дистрибуції:{" "}
+                    </span>
+                    Понад 160 країн
+                  </li>
+                </ul>
+
+                <p>
+                  <b> Основні принципи компанії: </b>
+                </p>
+                <ul className="mb-4">
+                  <li className="font-medium italic">
+                    Висока якість продукції
+                  </li>
+                  <li className="font-medium italic">Природні компоненти</li>
+                  <li className="font-medium italic">
+                    Інноваційні технології виробництва
+                  </li>
+                  <li className="font-medium italic">
+                    Глобальна екологічна відповідальність
+                  </li>
                 </ul>
                 <p className="mb-4">
-                  Виробництво та якість Forever Living Products володіє власними
-                  плантаціями алое вера, що дозволяє контролювати кожен етап
-                  виробництва – від вирощування рослин до кінцевого продукту.
-                  Вся продукція проходить суворий контроль якості, а компанія
-                  дотримується міжнародних стандартів сертифікації.
+                  Компанія Forever Living Products володіє власними плантаціями
+                  алое вера, що дозволяє контролювати кожен етап виробництва –
+                  від вирощування рослин до кінцевого продукту. Вся продукція
+                  проходить суворий контроль якості, а компанія дотримується
+                  міжнародних стандартів сертифікації.
                 </p>
-
                 <p className="mb-4">
                   Бізнес-модель та принципи Forever Living Products працює за
                   моделлю мережевого маркетингу (MLM), що дозволяє незалежним
                   дистриб’юторам розвивати власний бізнес, продаючи продукцію
                   компанії.
                 </p>
-                <p>
-                  <b> Основні принципи компанії: </b>
-                </p>
-                <ul className="mb-4">
-                  <li>Висока якість продукції </li>
-                  <li>Природні компоненти</li>
-                  <li>Інноваційні технології виробництва </li>
-                  <li>Глобальна екологічна відповідальність</li>
-                </ul>
                 <p>
                   Forever Living Products залишається одним із найбільших
                   виробників продукції на основі алое вера у світі, пропонуючи
@@ -184,7 +191,7 @@ const ForeverBlock = () => {
             {foreverLinks.map(({ title, url }) => (
               <li
                 key={nanoid()}
-                className="bg-forevercolor p-4 hover:bg-red-300"
+                className="bg-bluecolor p-4 hover:bg-redcolor hover:text-white"
               >
                 <a
                   href={url}
@@ -192,7 +199,7 @@ const ForeverBlock = () => {
                   rel="nofollow noopener noreferrer"
                   className="flex items-center"
                 >
-                  <p className="flex h-full w-full items-center justify-center text-center font-bold">
+                  <p className="flex h-full w-full items-center justify-center text-center">
                     {title}
                   </p>
                 </a>

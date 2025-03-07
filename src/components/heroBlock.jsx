@@ -36,10 +36,10 @@ const HeroBlock = () => {
         <img
           src={natalya}
           alt="Natalya"
-          className="-mt-6 w-2/3 rounded-full border-8 border-white shadow-all-green sm:-mt-7 md:relative md:-top-12 md:-left-0 md:w-full lg:-top-16 xl:-top-20"
+          className="-mt-10 w-2/3 rounded-full border-8 border-white shadow-all-green sm:-mt-7 md:relative md:-top-12 md:-left-0 md:w-full lg:-top-16 xl:-top-20"
         />
       </div>
-      <div className="col-span-2 flex flex-col justify-between">
+      <div className="col-span-2 mt-4 flex flex-col justify-between md:mt-0">
         <div className="mb-4">
           <div className="mb-4">
             <p className="mb-4 indent-14">
@@ -74,7 +74,7 @@ const HeroBlock = () => {
                   найкраще рішення для ваших потреб!
                 </p>
                 <br />
-                <p className="indent-14">
+                <p className="mb-4 indent-14">
                   <b>Вітаю вас!</b>
                 </p>
                 <p className="indent-14">
@@ -103,7 +103,7 @@ const HeroBlock = () => {
           <div className="flex justify-center">
             <button
               onClick={handleClick}
-              className="cursor-pointer text-green-500"
+              className="cursor-pointer text-greencolor"
             >
               {showText ? "Згорнути" : "Читати більше..."}
             </button>
@@ -112,9 +112,9 @@ const HeroBlock = () => {
         <div className="mt-auto">
           <button
             onClick={scrollToFooter}
-            className="flex w-full items-center bg-green-300 p-4 hover:bg-red-300"
+            className="flex w-full items-center bg-greencolor/90 p-4 hover:bg-redcolor"
           >
-            <p className="flex h-full w-full items-center justify-center text-center font-bold">
+            <p className="flex h-full w-full items-center justify-center text-center text-white">
               Зв&apos;яжіться зі мною
             </p>
           </button>

@@ -9,18 +9,18 @@ export default {
         montserrat: ["Montserrat", "sans-serif"],
       },
       colors: {
-        redcolor: "#D2865A",
-        greencolor: "#45A284",
+        redcolor: "#D88E73",
+        greencolor: "#2E936A",
         bluecolor: "#81BEC5",
+        forevercolor: "#93D1C1",
+        backcolor: "#D5DCDE",
         browncolor: "#D5DCDE",
         yellowcolor: "#fef08a",
-        backcolor: "#D5DCDE",
-        forevercolor: "#93D1C1",
       },
       boxShadow: {
         "custom-green": "5px 5px 10px #22c55e",
         "all-yellow": "0 0 16px 16px #fef08a",
-        "all-green": "0 0 16px 16px #45A284",
+        "all-green": "0 0 16px 8px #2E936A",
       },
       container: {
         center: "true", // Центрує контейнер

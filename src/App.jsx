@@ -1,11 +1,11 @@
 import Container from "./components/container";
-import Top from "./components/top.jsx";
-import Header from "./components/header.jsx";
+// import Top from "./components/top.jsx";
+// import Header from "./components/header.jsx";
 import HeroBlock from "./components/heroBlock.jsx";
 // import ShopBlock from "./components/shopBlock.jsx";
 // import ForeverBlock from "./components/foreverBlock.jsx";
-import Footer from "./components/footer.jsx";
-import Bottom from "./components/bottom.jsx";
+// import Footer from "./components/footer.jsx";
+// import Bottom from "./components/bottom.jsx";
 // import { ScrollToTopButton } from "./components/upBottom.jsx";
 
 // import ScrollAnimation from "./components/xtest.jsx";
@@ -14,11 +14,11 @@ import Bottom from "./components/bottom.jsx";
 const App = () => {
   return (
     <>
-      <Top>
+      {/* <Top>
         <Container>
           <Header />
         </Container>
-      </Top>
+      </Top> */}
       <Container>
         <HeroBlock />
         {/* <ShopBlock /> */}
@@ -32,11 +32,11 @@ const App = () => {
           </div>
           <div className="h-10 w-32 animate-pulse rounded bg-gray-300"></div> */}
       </Container>
-      <Bottom>
+      {/* <Bottom>
         <Container>
           <Footer />
         </Container>
-      </Bottom>
+      </Bottom> */}
       {/* <ScrollToTopButton /> */}
     </>
   );

@@ -32,14 +32,14 @@ const HeroBlock = () => {
       id="hero"
       className="mb-4 grid grid-cols-1 bg-green-100 p-4 sm:mb-5 sm:p-5 md:mb-6 md:grid md:grid-cols-3 md:gap-6 md:p-6 lg:mb-7 lg:gap-7 lg:p-7 xl:mb-8 xl:gap-8 xl:p-8"
     >
-      <div className="mb-4 sm:mb-5 md:relative md:mb-0">
+      <div className="relative border-4 border-red-500">
         <img
           src={natalya}
           alt="Natalya"
-          className="relative -top-11 w-2/3 rounded-full border-8 border-white shadow-all-green sm:-top-13 md:-top-12 md:w-full lg:-top-16 xl:-top-20"
+          className="relative -top-11 w-2/3 rounded-full border-8 border-white shadow-all-green sm:-top-13 md:-top-20 md:w-full lg:-top-24 xl:-top-28"
         />
       </div>
-      <div className="col-span-2 mt-4 flex flex-col justify-between md:mt-0">
+      <div className="mt-4 flex flex-col justify-between md:col-span-2 md:mt-0">
         <div className="mb-4">
           <div className="mb-4">
             <p className="mb-4 indent-14 font-vibes text-5xl">

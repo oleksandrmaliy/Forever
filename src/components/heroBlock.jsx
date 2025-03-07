@@ -39,7 +39,8 @@ const HeroBlock = () => {
           className="relative -top-11 w-2/3 rounded-full border-8 border-white shadow-all-green sm:-top-13 md:-top-20 md:w-full lg:-top-24 xl:-top-28"
         />
       </div>
-      <div className="mt-4 md:col-span-2 md:mt-0 md:flex md:flex-col md:justify-between">
+      <div className="mt-4 md:col-span-2 md:mt-0">
+        {/* md:flex md:flex-col md:justify-between */}
         <div className="mb-4">
           <div className="mb-4">
             <p className="mb-4 indent-14 font-vibes text-5xl">

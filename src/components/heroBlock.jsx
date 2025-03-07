@@ -29,7 +29,7 @@ const HeroBlock = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
         <div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ullam
@@ -41,7 +41,7 @@ const HeroBlock = () => {
             tenetur laboriosam qui! Modi, libero dolorem!
           </p>
         </div>
-        <div className="md:col-span-2">
+        <div className="md:bg-red-200">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
             molestias eius dignissimos repellat, praesentium minima rem nam

@@ -1,5 +1,5 @@
 // import { useState, useEffect } from "react";
-
+import css from "./hero.module.css";
 // import natalya from "../assets/images/Natalya.webp";
 
 const HeroBlock = () => {
@@ -29,8 +29,11 @@ const HeroBlock = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-12 md:grid md:flex-none md:grid-cols-2">
-        <div className="min-w-0 md:bg-blue-200">
+      <div
+        className={css.herocontainer}
+        // className="flex flex-col gap-12 md:grid md:flex-none md:grid-cols-2"
+      >
+        <div className="bg-blue-200">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ullam
             rerum numquam facere iusto tempore error, magni excepturi corporis
@@ -41,7 +44,7 @@ const HeroBlock = () => {
             tenetur laboriosam qui! Modi, libero dolorem!
           </p>
         </div>
-        <div className="min-w-0 md:bg-red-200">
+        <div className="md:bg-red-200">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
             molestias eius dignissimos repellat, praesentium minima rem nam

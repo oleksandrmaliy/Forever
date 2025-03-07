@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
-import natalya from "../assets/images/natalya.jpg";
-// import phone from "../assets/images/phone.jpg";
+import natalya from "../assets/images/Natalya.webp";
 
 const HeroBlock = () => {
   const [showText, setShowText] = useState(false);
@@ -31,17 +30,15 @@ const HeroBlock = () => {
   return (
     <div
       id="hero"
-      className="mb-4 grid grid-cols-1 border-4 border-red-500 bg-green-100 p-4 sm:mb-5 sm:p-5 md:mb-6 md:grid md:grid-cols-3 md:gap-6 md:p-6 lg:mb-7 lg:gap-7 lg:p-7 xl:mb-8 xl:gap-8 xl:p-8"
+      className="mb-4 grid grid-cols-1 bg-green-100 p-4 sm:mb-5 sm:p-5 md:mb-6 md:grid md:grid-cols-3 md:gap-6 md:p-6 lg:mb-7 lg:gap-7 lg:p-7 xl:mb-8 xl:gap-8 xl:p-8"
     >
-      <div className="mb-4 border-4 border-red-500 sm:mb-5 md:relative md:mb-0">
+      <div className="mb-4 sm:mb-5 md:relative md:mb-0">
         <img
           src={natalya}
           alt="Natalya"
           className="-mt-6 w-2/3 rounded-full border-8 border-white shadow-all-green sm:-mt-7 md:relative md:-top-12 md:-left-0 md:w-full lg:-top-16 xl:-top-20"
         />
       </div>
-
-      {/* sm:-top-8 md:-top-12 lg:-top-24 xl:-top-48 2xl:-top-60 */}
       <div className="col-span-2 flex flex-col justify-between">
         <div className="mb-4">
           <div className="mb-4">
@@ -112,16 +109,11 @@ const HeroBlock = () => {
             </button>
           </div>
         </div>
-        <div className="mt-auto border-4 border-red-500">
+        <div className="mt-auto">
           <button
             onClick={scrollToFooter}
-            className="flex w-full items-center bg-blue-300 p-4 hover:bg-red-300"
+            className="flex w-full items-center bg-green-300 p-4 hover:bg-red-300"
           >
-            {/* <img
-              src={phone}
-              alt="Avatar"
-              className="h-auto w-24 rounded-full border-4 border-red-500"
-            /> */}
             <p className="flex h-full w-full items-center justify-center text-center font-bold">
               Зв&apos;яжіться зі мною
             </p>
@@ -133,27 +125,3 @@ const HeroBlock = () => {
 };
 
 export default HeroBlock;
-
-// import natalya from "../assets/images/natalya.jpg";
-
-// const HeroBlock = () => {
-//   return (
-//     <div className="relative mb-8 grid w-full grid-cols-3 gap-16 bg-[url('/aloeCorner.jpg')] bg-cover bg-center px-4 py-8 before:absolute before:inset-0 before:bg-white/50 before:backdrop-blur-sm before:content-['']">
-//       <div className="relative -top-32 flex justify-center">
-//         <img
-//           src={natalya}
-//           alt="Photo"
-//           className="relative z-10 h-auto w-full rounded-full border-8 border-backcolor shadow-all-green"
-//         />
-//       </div>
-//       <div className="relative z-10 col-span-2 flex items-center">
-//         <p className="indent-14 text-xl">
-//           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-//           doloremque eos non excepturi exercitationem rerum dolores quam numquam
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default HeroBlock;

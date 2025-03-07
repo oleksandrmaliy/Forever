@@ -29,8 +29,8 @@ const HeroBlock = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-        <div>
+      <div className="flex flex-col gap-12 md:grid-cols-2">
+        <div className="min-w-0 md:bg-blue-200">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ullam
             rerum numquam facere iusto tempore error, magni excepturi corporis
@@ -41,7 +41,7 @@ const HeroBlock = () => {
             tenetur laboriosam qui! Modi, libero dolorem!
           </p>
         </div>
-        <div className="md:bg-red-200">
+        <div className="min-w-0 md:bg-red-200">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
             molestias eius dignissimos repellat, praesentium minima rem nam

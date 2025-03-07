@@ -29,7 +29,7 @@ const HeroBlock = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-12 md:grid-cols-2">
+      <div className="flex flex-col gap-12 md:grid md:flex-none md:grid-cols-2">
         <div className="min-w-0 md:bg-blue-200">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ullam

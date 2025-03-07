@@ -1,8 +1,4 @@
 .herocontainer {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem; /* 12 * 0.25rem = 3rem */
-
   /* Вимикаємо flex і вмикаємо grid на md (768px+) */
   @media (min-width: 768px) {
     display: grid;
